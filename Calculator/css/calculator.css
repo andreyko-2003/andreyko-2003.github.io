@@ -1,0 +1,104 @@
+html {
+  background: #ffffff;
+}
+
+#conteiner {
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-areas:
+    "t t t t"
+    "t t t t"
+    "t t t t"
+    "r r r r"
+    "r r r r"
+    "del back div mul"
+    "b7 b8 b9 sub"
+    "b4 b5 b6 add"
+    "b1 b2 b3 eq"
+    "bm b0 bd eq";
+  height: 0px;
+}
+
+.text {
+  background: #ffffff;
+  grid-area: t;
+  border-radius: 5px;
+  border: 2px solid #008080;
+  margin: -2px;
+}
+
+.text #question {
+  font-size: 30px;
+  color: #000000;
+  padding: 0px 15px 0px 15px;
+  text-align: right;
+}
+
+.results {
+  background-color: #ffffff;
+  grid-area: r;
+  border-radius: 5px;
+  border: 2px solid #d95d24;
+  margin: -2px;
+}
+
+.results #res {
+  font-size: 20px;
+  color: #696969;
+  padding: 0px 15px 0px 15px;
+  text-align: right;
+}
+
+#bEql { grid-area: eq; }
+
+
+#bEql button {
+  height: 100%;
+  width: 100%;
+  background: #008080;
+  border-radius: 5px;
+  border: none;
+  font-size: 25px;
+}
+
+#bAdd { grid-area: add; }
+#bSub { grid-area: sub; }
+#bMul { grid-area: mul; }
+#bDel { grid-area: del; }
+#bMore { grid-area: bm; }
+#bDot { grid-area: bd;  }
+#bBack { grid-area: back; }
+
+#bAdd button, #bSub button, #bDiv button, #bMul button,
+#bDel button, #bMore button, #bDot button, #bBack button {
+  height: 100%;
+  width: 100%;
+  font-size: 25px;
+  background: #6cb1b4;
+  border-radius: 5px;
+  border: none;
+}
+
+#b0 { grid-area: b0; }
+#b1 { grid-area: b1; }
+#b2 { grid-area: b2; }
+#b3 { grid-area: b3; }
+#b4 { grid-area: b4; }
+#b5 { grid-area: b5; }
+#b6 { grid-area: b6; }
+#b7 { grid-area: b7; }
+#b8 { grid-area: b8; }
+#b9 { grid-area: b9; }
+
+#b0 button, #b1 button, #b2 button, #b3 button, #b4 button,
+#b5 button, #b6 button, #b7 button, #b8 button, #b9 button {
+  height: 100%;
+  width: 100%;
+  background: #d95d24;
+  color: #ffffff;
+  font-size: 25px;
+  border-radius: 5px;
+  border: none;
+}
