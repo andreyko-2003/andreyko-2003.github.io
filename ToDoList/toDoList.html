@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>ToDoList</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <h1>My To-Do List</h1>
+  </header>
+
+  <div class="main">
+    <h1>Add task</h1>
+    <div class="addNote">
+      <div class="title">
+        <label for="add-new-task">Title:</label> <br>
+        <input id="add-new-task" type="text" name="task">
+      </div>
+      <div class="category">
+        <label for="add-category">Category:</label> <br>
+        <input id="add-category" type="text" name="category">
+      </div>
+      <div class="dayI">
+        <label for="day">Day:</label> <br>
+        <input id="day" type="date" name="day" min="">
+      </div>
+      <div class="start">
+        <label for="time-start">Time start:</label> <br>
+        <input id="time-start" type="time" name="time-start">
+      </div>
+      <div class="end">
+        <label for="time-end">Time end:</label> <br>
+        <input id="time-end" type="time" name="time-end">
+      </div>
+      <div class="colors">
+        <label for="color">Color:</label> <br>
+        <input id="color-red" type="radio" name="color">
+        <label id="red" for="color-red" title="Red"></label>
+        <input id="color-orange" type="radio" name="color">
+        <label id="orange" for="color-orange" title="Orange"></label>
+        <input id="color-yellow" type="radio" name="color">
+        <label id="yellow" for="color-yellow" title="Yellow"></label>
+        <input id="color-green" type="radio" name="color">
+        <label id="green" for="color-green" title="Green"></label>
+        <input id="color-blue" type="radio" name="color">
+        <label id="blue" for="color-blue" title="Blue"></label>
+        <input id="color-violet" type="radio" name="color">
+        <label id="violet" for="color-violet" title="Violet"></label>
+      </div>
+
+    </div>
+    <div class="addButton">
+      <button id="add" type="button" name="add">Add</button>
+    </div>
+
+    <hr>
+    
+    <div class="taskLists">
+      <h1 class="noTask">You don`t have task for today</h1>
+
+      <h1 class="dayTitle">Task for today - <span class="day"></span></h1>
+      <ul id="listForToday">
+
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+
+  </footer>
+  <script src=script.js></script>
+</body>
+
+</html>
