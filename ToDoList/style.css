@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #eee;
+  overflow-x: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-around;
+  height: 70px;
+  font-size: 1.4em;
+  background: #222222;
+  color: #ffffff;
+}
+
+header h1 {
+  padding: 5px;
+  padding-left: 25px;
+}
+
+.main {
+  padding: 15px;
+}
+
+.main h1 {
+  text-align: center;
+}
+
+.main .addTask {
+  padding: 15px;
+  font-size: 1.5em;
+  display: grid;
+  grid-template-rows: repeat(5, 120px);
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-areas:
+    ". . h h h h . ."
+    "t t t . . i i i"
+    "d . a a . s . e"
+    ". . c c c c . ."
+    ". . b b b b . .";
+  text-align: center;
+}
+
+.addHead {grid-area: h}
+.title {grid-area: t}
+.category {grid-area: i}
+.dayI {grid-area: d}
+.start {grid-area: s}
+.end {grid-area: e}
+.colors {grid-area: c;}
+.timing {grid-area: a}
+.buttons {grid-area: b}
+
+.addTask input {
+  font-size: 1em;
+  padding: 5px;
+  width: 100%;
+}
+
+.colors input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.colors input+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+
+.colors input + label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #333;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    margin-top: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+
+#color-red + label::before {background-color: #ff0000;}
+#color-red:hover + label:hover::before {border-color: #dd0000;}
+#color-orange + label::before {background-color: #ff6600;}
+#color-orange:hover + label:hover::before {border-color: #ff7700;}
+#color-yellow + label::before {background-color: #ffdd00}
+#color-yellow:hover + label:hover::before {border-color: #ffbb00}
+#color-green + label::before {background-color: #20cc00}
+#color-green:hover + label:hover::before {border-color: #088800}
+#color-blue + label::before {background-color: #0055ff}
+#color-blue:hover + label:hover::before {border-color: #1300cc}
+#color-violet + label::before {background-color: #9900ff}
+#color-violet + label::before {margin-right: 0}
+#color-violet:hover + label:hover::before {border-color: #aa00ff}
+
+.colors input:checked+label::before {
+  border-color: #333333;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.button {
+  width: 100%;
+  text-align: center;
+}
+
+#add, #cancel, #save {
+  margin: 20px;
+  margin-top: 0px;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: #222222;
+  border-radius: 1.5em;
+  border: 2px solid #000000;
+  color: white;
+  font-size: 1.5em;
+}
+
+#cancel {
+  background-color: white;
+  color: black;
+}
+
+.main ul {
+  list-style: none;
+  margin: 10px;
+  font-size: 1.5em;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.task {
+  background: #ffffff;
+  width: 40%;
+  margin: 5% 2.5%;
+  margin-top: 0px;
+  word-wrap: break-word;
+  padding: 2%;
+  border: 2px solid black;
+  border-radius: 5%;
+}
+
+.done {
+  width: 50px;
+  padding: 5px;
+  background-color: #33cc33;
+  border-radius: 100%;
+  border: 2px solid white;
+  margin: 10px;
+  float:right;
+  font-size: 1.2em;
+}
+
+.del {
+  width: 50px;
+  padding: 5px;
+  background-color: #ff3300;
+  border-radius: 100%;
+  border: 2px solid white;
+  margin: 10px;
+  float:right;
+  font-size: 1.2em;
+}
+
+.set {
+  padding: 5px;
+  width: 50px;
+  background-color: #e67d34;
+  border-radius: 100%;
+  border: 2px solid white;
+  margin: 10px;
+  float:right;
+  font-size: 1.2em;
+}
+
+#addT {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background: black;
+  color: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  padding: 10px 25px;
+  font-size: 3em;
+}
